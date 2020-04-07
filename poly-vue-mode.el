@@ -30,41 +30,34 @@
 
 (require 'polymode)
 
-(defcustom pm-host/vue-html
-  (pm-host-chunkmode :name "vue"
-                     :mode 'vue-html-mode)
-  "Vue-html host chunkmode."
-  :group 'poly-hostmodes
-  :type 'object)
+(define-hostmode poly-vue-html-hostmode
+  :mode 'vue-html-mode)
 
-(defcustom  pm-inner/css-fenced-code
-  (pm-inner-auto-chunkmode :name "css-fenced-code"
-			   :head-mode 'host
-                           :mode 'css-mode
-			   :mode-matcher ""
-                           :head-matcher "<style>"
-                           :tail-matcher "</style>"
-                           )
-  "CSS fenced code block."
-  :group 'poly-innermodes
-  :type 'object)
+(define-innermode poly-css-fenced-code-innermode
+  :head-mode 'host
+  :tail-mode 'host
+  :mode 'css-mode
+  :head-matcher "<style>"
+  :tail-matcher "</style>")
 
-(defcustom  pm-inner/js-fenced-code
-  (pm-inner-auto-chunkmode :name "js-fenced-code"
-			   :head-mode 'host
-                           :mode 'javascript-mode
-			   :mode-matcher ""
-                           :head-matcher "<script>"
-                           :tail-matcher "</script>"
-                           )
-  "Javascript fenced code block."
-  :group 'poly-innermodes
-  :type 'object)
+(define-innermode  poly-js-fenced-code-innermode
+  :head-mode 'host
+  :tail-mode 'host
+  :mode 'javascript-mode
+  :head-matcher "<script>"
+  :tail-matcher "</script>")
+
+(define-innermode poly-ts-fenced-code-innermode
+  :head-mode 'host
+  :tail-mode 'host
+  :mode 'typescript-mode
+  :head-matcher "<script lang=\"ts\">"
+  :tail-matcher "</script>")
 
 
 (define-polymode poly-vue-mode
-  :hostmode 'pm-host/vue-html
-  :innermodes '(pm-inner/css-fenced-code pm-inner/js-fenced-code))
+  :hostmode 'poly-vue-html-hostmode
+  :innermodes '(poly-css-fenced-code-innermode poly-ts-fenced-code-innermode poly-js-fenced-code-innermode))
 
 
 (provide 'poly-vue-mode)
