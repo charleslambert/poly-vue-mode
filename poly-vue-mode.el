@@ -1,11 +1,9 @@
-;;; poly-vue.el --- A vue mode based on polymode -*- lexical-binding: t -*-
+;;; poly-vue-mode.el --- A vue mode based on polymode -*- lexical-binding: t -*-
 
 ;; Author: Charles Lambert
 ;; Maintainer: Charles Lambert
 ;; Version: 0.1
-;; Package-Requires: (dependencies)
-;; Homepage: homepage
-;; Keywords: keywords
+;; Package-Requires: ((polymode "0.2.2"))
 
 
 ;; This file is not part of GNU Emacs
@@ -71,4 +69,4 @@
 
 (provide 'poly-vue-mode)
 
-;;; poly-vue.el ends here
+;;; poly-vue-mode.el ends here
