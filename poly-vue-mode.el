@@ -69,6 +69,6 @@
   :innermodes '(pm-inner/css-fenced-code pm-inner/js-fenced-code))
 
 
-(provide 'poly-vue)
+(provide 'poly-vue-mode)
 
 ;;; poly-vue.el ends here
