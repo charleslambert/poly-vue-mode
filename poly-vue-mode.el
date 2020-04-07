@@ -2,7 +2,7 @@
 
 ;; Author: Charles Lambert
 ;; Maintainer: Charles Lambert
-;; Version: version
+;; Version: 0.1
 ;; Package-Requires: (dependencies)
 ;; Homepage: homepage
 ;; Keywords: keywords
